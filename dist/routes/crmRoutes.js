@@ -18,16 +18,16 @@ class Routes {
             // middleware
             console.log(`Request from: ${req.originalUrl}`);
             console.log(`Request type: ${req.method}`);
-            if (req.query.key !== '78942ef2c1c98bf10fca09c808d718fa3734703e') {
-                res.status(401).send({
-                    msg: 'You shall not pass!',
-                    requestFrom: req.originalUrl,
-                    requestType: req.method,
-                });
-            }
-            else {
+            // if (req.query.key !== '78942ef2c1c98bf10fca09c808d718fa3734703e') {
+            //     res.status(401).send({
+            //         msg: 'You shall not pass!',
+            //         requestFrom: req.originalUrl,
+            //         requestType: req.method,
+            //     });
+            // }
+            // else {
                 next();
-            }
+            // }
         }, this.contactController.getContacts)
             // POST endpoint
             .post(this.contactController.addNewContact);
